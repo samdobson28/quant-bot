@@ -31,24 +31,40 @@ def fetch_crypto_price(symbol):
         print(f"Error fetching price for {symbol}:", e)
         return None
 
-def place_order(symbol, qty, side):
-    """Place a buy or sell order for a crypto asset and monitor its status."""
+def place_market_order(symbol, qty):
+    """
+    Place a market order for crypto.
+    """
     try:
         order = api.submit_order(
             symbol=symbol,
             qty=qty,
-            side=side,
-            type='market',
-            time_in_force='gtc'
+            side="buy",
+            type="market",
+            time_in_force="gtc"
         )
-        print(f"Order placed: {order}")
-        
-        # Monitor order status
-        while order.status not in ["filled", "canceled", "expired"]:
-            order = api.get_order(order.id)
-            print(f"Order status: {order.status}")
-        
+        print("Market order placed:", order)
         return order
     except Exception as e:
-        print(f"Error placing order: {e}")
+        print("Error placing market order:", e)
+        return None
+
+def place_stop_limit_order(symbol, qty, stop_price, limit_price):
+    """
+    Place a stop-limit order for crypto to act as a stop-loss.
+    """
+    try:
+        order = api.submit_order(
+            symbol=symbol,
+            qty=qty,
+            side="sell",
+            type="stop_limit",
+            time_in_force="gtc",
+            stop_price=stop_price,
+            limit_price=limit_price
+        )
+        print("Stop-limit (stop-loss) order placed:", order)
+        return order
+    except Exception as e:
+        print("Error placing stop-limit order:", e)
         return None
