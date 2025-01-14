@@ -9,7 +9,7 @@ A modular quant trading bot designed for flexible strategy development and autom
 
 ## Setup
 1. Install dependencies: `pip install -r requirements.txt`
-2. Configure settings in `config/settings.py`.
+2. Create a .env file to add (Alpaca) api keys/urls to match `config/settings.py`.
 
 ## Project Structure
 
