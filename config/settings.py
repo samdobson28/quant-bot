@@ -7,6 +7,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 PAPER_TRADING = True
-API_KEY = os.getenv("ALPACA_API_KEY")
-API_SECRET = os.getenv("ALPACA_API_SECRET")
+API_KEY = os.getenv("APCA_API_KEY_ID")
+API_SECRET = os.getenv("APCA_API_SECRET_KEY")
 ALPACA_BASE_URL = os.getenv("ALPACA_BASE_URL")
