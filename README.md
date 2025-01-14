@@ -12,6 +12,9 @@ A modular quant trading bot designed for flexible strategy development and autom
 2. Configure settings in `config/settings.py`.
 
 ## Project Structure
+
+View this in the raw file... I haven't reformatted yet
+
 quant-bot/
 │
 ├── data/                        # Data storage (e.g., historical data, logs)
