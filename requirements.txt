@@ -2,3 +2,7 @@ python-dotenv
 alpaca-trade-api
 pandas
 numpy
+alpaca-py
+pytest
+sqlalchemy
+psycopg2

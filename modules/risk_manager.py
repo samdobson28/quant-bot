@@ -1,3 +1,5 @@
+# risk_manager.py
+
 from modules.executor import check_account
 
 def calculate_position_size(symbol_price, equity, risk_percentage=0.02):

@@ -1,3 +1,5 @@
+# momentum.py
+
 def calculate_moving_averages(data, short_window=5, long_window=20):
     """
     Calculate short-term and long-term moving averages.
